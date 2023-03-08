@@ -1,0 +1,21 @@
+name: Work_Flow_Template
+on: push
+jobs:
+  _job1:
+    name: First_job
+    runs-on: ubuntu-latest
+    steps:
+    - name: step1
+      uses: actions/checkout@v3
+    - name: step2
+      run: env | sort
+    
+  _job2:
+    name: Second_job
+    runs-on: windows-latest
+    steps:
+    - name: step1
+      uses: actions/checkout@v3
+    - name: step2
+      run: "Get-ChildItem Env:"
+    
