@@ -1,5 +1,7 @@
 name: Work_Flow_Template
-on: push
+on: 
+  push:
+    branches: ["test_run"]
 jobs:
   _job1:
     name: First_job
@@ -11,6 +13,7 @@ jobs:
       run: env | sort
     
   _job2:
+    needs: ["_job1"]
     name: Second_job
     runs-on: windows-latest
     steps:
